@@ -278,32 +278,6 @@ BaseBlockProblem<dim>::assemble_system()
                   copy);
 
 
-  //Linear operators
-//  auto A  = linear_operator< TrilinosWrappers::MPI::Vector >( stokes_matrix.block(0,0) );
-//  auto Bt = linear_operator< TrilinosWrappers::MPI::Vector >( stokes_matrix.block(0,1) );
-//  auto B     = linear_operator< TrilinosWrappers::MPI::Vector >( stokes_matrix.block(1,0) );
-//  auto ZeroP = linear_operator< TrilinosWrappers::MPI::Vector >( stokes_matrix.block(1,1) );
-
-//  const auto &A = system_block_matrix.block(0, 0);
-//  const auto &B = system_block_matrix.block(1, 0);
-//
-//  const auto op_A = linear_operator(A);
-//
-//  ReductionControl reduction_control_A(2000, 1.0e-5, 1.0e-10);
-//  SolverCG<Vector<double>>    solver_A(reduction_control_A);
-//
-//  const auto op_A_inv = inverse_operator(op_A, solver_A,PreconditionIdentity());
-//
-//  const auto op_B = linear_operator(B);
-//  const auto op_Bt= transpose_operator(op_B);
-//
-//  const auto op_S = op_Bt*op_A_inv*op_B;
-
-//  ReductionControl reduction_control_S(2000, 1.0e-5, 1.0e-10);
-//  SolverCG<Vector<double>>    solver_S(reduction_control_S);
-//  const auto preconditioner_S =
-//    inverse_operator(op_sS, solver_aS,PreconditionIdentity());
-
   system_block_matrix.compress(VectorOperation::add);
   preconditioner_matrix.compress(VectorOperation::add);
   system_block_rhs.compress(VectorOperation::add);
@@ -316,12 +290,6 @@ void
 BaseBlockProblem<dim>::solve()
 {
   TimerOutput::Scope timer_section(this->timer, "solve");
-  // SolverCG<LA::MPI::BlockVector> solver(solver_control);
-  // LA::MPI::PreconditionAMG  amg;
-  // amg.initialize(system_matrix);
-  // solver.solve(system_matrix, solution, system_rhs, amg);
-  // constraints.distribute(solution);
-  // locally_relevant_solution = solution;
 }
 
 

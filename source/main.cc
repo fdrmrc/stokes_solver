@@ -27,13 +27,6 @@
 
 int main(int argc, char **argv) {
 
-	//Decide which program to run, according to the name of the executable
-//	const std::string program_name(argv[0]); //the name of the program
-//	if (program_name.find("poisson") != std::string::npos) {
-//		return run<Poisson<2>>(argc, argv);
-//	} else if (program_name.find("linear_elasticity") != std::string::npos) {
-//		return run<LinearElasticity<2>>(argc, argv);
-//	}else if(program_name.find("stokes") != std::string::npos){
+{
 		return run<Stokes<2>>(argc,argv);
-//	}
 }

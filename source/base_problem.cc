@@ -445,21 +445,6 @@ BaseProblem<dim>::mark()
 
 
 
-// template <int dim>
-// void
-// BaseProblem<dim>::add_data_vectors(DataOut<dim> &data_out) const
-// {
-//   std::vector<std::string> names(n_components, "u");
-//   std::vector<DataComponentInterpretation::DataComponentInterpretation>
-//     interpretation(n_components,
-//                    DataComponentInterpretation::component_is_part_of_vector);
-
-//   data_out.add_data_vector(locally_relevant_solution,
-//                            names,
-//                            DataOut<dim>::type_dof_data,
-//                            interpretation);
-// }
-
 
 template <int dim>
 void
