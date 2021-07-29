@@ -1,8 +1,8 @@
-## Stokes solver
+# Stokes solver
 
 
 
-# Lid cavity problem:
+## Lid cavity problem:
 
 The boundary conditions (for the velocity  field) for this problem are homogeneous Dirichlet on three edges, and ``(U_x,0)`` on the top face. 
 As a block preconditioner I used ``(A,Bt; 0, -S)`` where ``S`` is the classical Schur complement. The implementation of the preconditioner has been done by using a block backsubstitution, by intepreting each matrix inverse as a linear operator, instead of the usual low level implementation. As a linear solver, FGMRES has been chosen. It performs automatically a right preconditioning, so the observed residual is the **true** one, not the one of the preconditioned system.
@@ -55,3 +55,10 @@ Running on 4 processors with `mpirun -np 4 ./stokes` the CPU time scales with a 
 
 Here the result after 7 grid refinements, showing the magnitude of the velocity vector.
 ![Screenshot](figures/lid_cavity.png)
+
+
+# Navier stokes for incompressible viscous flow [Work in progress]
+
+## Time dependent incompressible Navier Stokes with ARKODE
+
+The goal of this is to march in time with an IMEX approach, using the SUNDIALS wrappers provided by the library, instead of hard-coding an implicit-explicit first order method. 
