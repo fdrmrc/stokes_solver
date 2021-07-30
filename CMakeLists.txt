@@ -35,9 +35,9 @@ PROJECT(${TARGET} CXX)
 
 # Usually, you will not need to modify anything beyond this point...
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
 
-FIND_PACKAGE(deal.II 9.2.0 QUIET
+FIND_PACKAGE(deal.II 9.3.0 QUIET
   HINTS ${deal.II_DIR} ${DEAL_II_DIR} ../ ../../ $ENV{DEAL_II_DIR}
   )
 IF(NOT ${deal.II_FOUND})

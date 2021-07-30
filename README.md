@@ -62,3 +62,7 @@ Here the result after 7 grid refinements, showing the magnitude of the velocity 
 ## Time dependent incompressible Navier Stokes with ARKODE
 
 The goal of this is to march in time with an IMEX approach, using the SUNDIALS wrappers provided by the library, instead of hard-coding an implicit-explicit first order method. 
+
+
+
+# Notes: it requires dealii version 9.3.0, as it is necessary to solve problems with mass matrices and older versions are not compatible anymore.
