@@ -65,4 +65,4 @@ The goal of this is to march in time with an IMEX approach, using the SUNDIALS w
 
 
 
-# Notes: it requires dealii version 9.3.0, as it is necessary to solve problems with mass matrices and older versions are not compatible anymore.
+- it requires dealii version 9.3.0, as it is necessary to solve problems with mass matrices and older versions are not compatible anymore.
